@@ -1,8 +1,9 @@
 import './App.css';
 import { useRef, useState } from 'react';
 import { ClockPicker } from '@mui/lab';
-// 
+// Ну смог подобрать дисплей в mui, поэтому используются только кнопки и типография
 import { Button } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 
 function App() {
@@ -49,8 +50,9 @@ function App() {
   return (
     <div className="App">
       <div className='timer'>
-        <h1 className='header'>Таймер</h1>
-        <p className='clock'>{formatTime()}</p>
+        <Typography variant="h2"  >   Таймер     </Typography>
+        <Typography variant="h1" >  {formatTime()}     </Typography>
+
         <div className='buttons'>
           {!isActive ? (<Button onClick={start}>Start</Button>) : (<Button onClick={stop}>Stop</Button>)}
           {!isPaused ? (<Button onClick={pause}>Pause</Button>) : (<Button onClick={resume}>Resume</Button>)}
